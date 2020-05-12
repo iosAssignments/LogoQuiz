@@ -45,7 +45,6 @@ struct LogoService {
     }
     
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String>{
-        return .success
         switch response.statusCode {
         case 200...299: return .success
         case 401...500: return .failure(NetworkResponse.authenticationError.rawValue)
